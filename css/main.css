@@ -1,0 +1,1134 @@
+*, *:before, *:after{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+}
+img{
+    width: 100%;
+}
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.wrapper{
+    position: relative;
+    width: 1024px;
+    height: 768px;
+    background: #000000 url(../img/bg.png)center center / cover no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+}
+#pop-up, #help-up{
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    top: 50%;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 110px;
+    padding: 10px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.12);
+    background-color: #dff6fd;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    z-index: 1000;
+}
+#pop-up h1, #help-up h2{
+    font-family: sans-serif;
+    color: #ff2400;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+#pop-up p{
+    font-family: sans-serif;
+    color: #152978;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+}
+#pop-up.popup-action{
+    -webkit-animation: popupAction 0.5s linear 21s forwards;
+            animation: popupAction 0.5s linear 21s forwards;
+}
+#help-up{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+#help-up h2{
+    color: #fff200;
+    opacity: 1;
+}
+#help-up.helpup-action{
+    -webkit-animation: boomAction 2.2s ease-in forwards;
+            animation: boomAction 2.2s ease-in forwards;
+}
+
+.stars,
+.blue_circle,
+.polar_lights,
+.wave_back,
+.iceberg,
+.wave_front,
+.iceberg_bottom,
+.iceberg_top,
+.santa,
+.right-hand,
+.left-hand,
+.santa-body,
+.deer-2,
+.action-elems,
+.bubble,
+.submarine,
+.window,
+.cat,
+.torpedoes,
+.boom,
+.mine,
+.firework
+{
+    position: absolute;
+    pointer-events: none;
+}
+/* небо */
+.stars{
+    width: 100%;
+    top: 0;
+    -webkit-animation: flicker 4s infinite linear;
+            animation: flicker 4s infinite linear;
+}
+.polar_lights{
+    width: 1024px;
+    top: 0;
+}
+/* хвилі */
+.wave_back, .wave_front{
+    width: 1084px;
+    height: 524px;
+    bottom: -3px;
+    left: calc(50% - 1084px/2);
+}
+.wave_back{
+    -webkit-animation: waves 4s linear infinite;
+            animation: waves 4s linear infinite;
+}
+.wave_front{
+    /* z-index: 2; */
+    -webkit-animation: waves 3s ease-in-out infinite;
+            animation: waves 3s ease-in-out infinite;
+   
+}
+/* айсберг */
+.iceberg{
+    width: 111px;
+    height: 131px;
+    left: 444px;
+    top: 220px;
+    -webkit-animation: icebergWave 8s linear infinite;
+            animation: icebergWave 8s linear infinite;
+}
+.iceberg.iceberg-stop{
+    -webkit-animation: none;
+            animation: none;
+}
+.iceberg__wrap, .action-elems__wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;  
+}
+.iceberg_top{
+    top: 0;
+    width: 104px;
+    height: 114px;  
+}
+.iceberg_top.iceberg-action_top{
+    -webkit-animation: icebergCrashLeft 22s linear 1s forwards;
+            animation: icebergCrashLeft 22s linear 1s forwards;
+}
+.iceberg_bottom{
+    bottom: 0;
+    width: 105px;
+    height: 84px;
+}
+.iceberg_bottom.iceberg-action_bottom{
+    -webkit-animation: icebergCrashRight 22s linear 1s forwards;
+            animation: icebergCrashRight 22s linear 1s forwards;
+}
+/* santa claus */
+.santa{
+    top: -100px;
+    left: 10px;
+    width: 115px;
+    height: 135px;
+}
+.santa.santa-action{
+    position: relative;
+    -webkit-animation: santaToSubmorine 1.5s linear 17s forwards;
+            animation: santaToSubmorine 1.5s linear 17s forwards;
+}
+.santa__wrap{
+    position: relative;
+    width: 100%;
+}
+.santa-body{
+    top: 0;
+    left: 0;
+}
+.left-hand{
+    top: 14px;
+    left: -5px;
+    width: 46px;
+    /* transform-origin: right 80%;
+    animation: hands-l 3s linear 2s alternate infinite; */
+}
+.right-hand{
+    top: 36px;
+    left: 65px;
+    width: 58px;
+    -webkit-transform-origin: left 50%;
+        -ms-transform-origin: left 50%;
+            transform-origin: left 50%;
+    -webkit-animation: hands-r 3s linear 2s alternate infinite;
+            animation: hands-r 3s linear 2s alternate infinite;
+}
+/* Олені */
+.deer-2{
+    width: 60px;
+    top: -47px;
+    left: -18px;
+    -webkit-transform: rotate(-27deg);
+        -ms-transform: rotate(-27deg);
+            transform: rotate(-27deg)
+}
+.deer-2.deer-action{
+    -webkit-animation: deerToSubmorine 2s linear 19s forwards;
+            animation: deerToSubmorine 2s linear 19s forwards;
+}
+
+/* батьківський блок: лодка, кіт, бульбашки, вибух, торпеди */
+.action-elems{
+    top: 365px;
+    left: 1024px;
+    width: 441px;
+    height: 282px;
+    --count: 1;
+    will-change: matrix;
+    -webkit-animation: submarine 30s linear;
+            animation: submarine 30s linear;
+    -webkit-animation-iteration-count: var(--count);
+            animation-iteration-count: var(--count);
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+}
+.action-elems.submarine-action{
+    -webkit-animation: submarineAction 15s ease-out 1s forwards;
+            animation: submarineAction 15s ease-out 1s forwards;
+    
+}
+
+/* БУЛЬБАШКИ */
+.bubble-1{
+    right: 25px;
+    bottom: 45px;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: bubble_1 4s linear infinite;
+            animation: bubble_1 4s linear infinite;
+}
+.bubble-2{
+    right: 10px;
+    bottom: 48px;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: bubble_1 3.8s linear infinite;
+            animation: bubble_1 3.8s linear infinite;
+}
+.bubble-3{
+    right: 20px;
+    bottom: 50px;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: bubble_1 3.9s linear infinite;
+            animation: bubble_1 3.9s linear infinite;
+}
+.bubble-4{
+    right: 30px;
+    bottom: 60px;
+    width: 24px;
+    height: 24px;
+    -webkit-animation: bubble_1 4.2s linear infinite;
+            animation: bubble_1 4.2s linear infinite;
+}
+.bubble-5{
+    right: 40px;
+    bottom: 60px;
+    width: 18px;
+    height: 18px;
+    -webkit-animation: bubble_1 4.1s linear infinite;
+            animation: bubble_1 4.1s linear infinite;
+}
+.bubble-6{
+    right: 50px;
+    bottom: 34px;
+    width: 13px;
+    height: 13px;
+    -webkit-animation: bubble_1 4s linear infinite;
+            animation: bubble_1 4s linear infinite;
+}
+.bubble-7{
+    right: 60px;
+    bottom: 40px;
+    width: 18px;
+    height: 18px;
+    -webkit-animation: bubble_1 4s linear infinite;
+            animation: bubble_1 4s linear infinite;
+}
+.bubble.bubble-stop{
+    -webkit-animation: bubbleStop 1.8s linear 1s infinite;
+            animation: bubbleStop 1.8s linear 1s infinite;
+}
+/* Кіт та субмарина */
+.cat{
+    width: 128px;
+    height: 129px;
+    left: 70px;
+    top: 137px;
+    -webkit-transform: rotate(-31deg);
+        -ms-transform: rotate(-31deg);
+            transform: rotate(-31deg);  
+}
+.cat.cat-action{
+    -webkit-animation: exitCat 4s ease-out 16s forwards;
+            animation: exitCat 4s ease-out 16s forwards;
+}
+.submarine{
+    top: 0;
+}
+.window{
+    top: 160px;
+    left: 78px;
+    opacity: 0;
+}
+.window.window-action{
+    -webkit-animation: windowVisible 0.5s linear 16s forwards;
+            animation: windowVisible 0.5s linear 16s forwards;
+}
+/* Торпеди */
+.torpedoes{
+    width: 164px;
+    height: 52px;
+}
+.torpedoes.torpedoes-action{
+    -webkit-animation: torpAction 1s linear 5s forwards;
+            animation: torpAction 1s linear 5s forwards;
+}
+.torpedo-1{
+    top: 60%;
+    left: 140%;
+    -webkit-animation: torpWay 3s ease-in-out infinite;
+            animation: torpWay 3s ease-in-out infinite;
+}
+.torpedo-2{
+    top: 70%;
+    left: 130%;
+    -webkit-animation: torpWay 3s ease-in-out .2s infinite;
+            animation: torpWay 3s ease-in-out .2s infinite;
+}
+.torpedo-3{
+    top: 80%;
+    left: 150%;
+    -webkit-animation: torpWay 3s ease-in-out .1s infinite;
+            animation: torpWay 3s ease-in-out .1s infinite;
+}
+/* Міна та вибух */
+.mine{
+    top: 160px;
+    left: 200px;
+    width: 80px;
+}
+.mine.mine-action{
+    -webkit-animation: mineAction 1.8s linear 4s forwards;
+            animation: mineAction 1.8s linear 4s forwards;
+}
+.boom{
+    top: 350px;
+    left: 660px;
+    width: 100px;
+    opacity: 0;
+}
+.boom.boom-action{
+    -webkit-animation: boomAction 1s 5.7s forwards;
+            animation: boomAction 1s 5.7s forwards;
+}
+/* феєрверки */
+.firework{
+    width: 120px;
+    opacity: 0;
+    -webkit-transform: scale(0.2);
+        -ms-transform: scale(0.2);
+            transform: scale(0.2);
+}
+.firework.firework-action{
+    -webkit-animation: fireworks 1.8s ease-out infinite;
+            animation: fireworks 1.8s ease-out infinite;
+    -webkit-animation-delay: 21s;
+            animation-delay: 21s;
+}
+.firework-1.firework-action{
+    top: 0px;
+    right: 250px;
+    -webkit-animation-delay: 21s;
+            animation-delay: 21s;
+}
+.firework-2.firework-action{
+    top: 40px;
+    right: 100px;
+    -webkit-animation-delay: 23s;
+            animation-delay: 23s;
+}
+.firework-3.firework-action{
+    top: 10px;
+    right: 180px;
+    -webkit-animation-delay: 21.7s;
+            animation-delay: 21.7s;
+}
+.firework-4.firework-action{
+    top: 20px;
+    right: 400px;
+    -webkit-animation-delay: 22.4s;
+            animation-delay: 22.4s;
+}
+.firework-5.firework-action{
+    top: 50px;
+    right: 300px;
+    -webkit-animation-delay: 22s;
+            animation-delay: 22s;
+}
+.firework-6.firework-action{
+    top: 120px;
+    right: 200px;
+    -webkit-animation-delay: 25s;
+            animation-delay: 25s;
+}
+.firework-7.firework-action{
+    top: 120px;
+    right: 350px;
+    -webkit-animation-delay: 24.6s;
+            animation-delay: 24.6s;
+}
+
+
+@-webkit-keyframes flicker{
+    0%{
+        opacity: 1;
+    }
+    5%{
+        opacity: 0.6;
+    }
+    10%{
+        opacity: 1;
+    }
+    15%{
+        opacity: 0.8;
+    }
+    20%{
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes flicker{
+    0%{
+        opacity: 1;
+    }
+    5%{
+        opacity: 0.6;
+    }
+    10%{
+        opacity: 1;
+    }
+    15%{
+        opacity: 0.8;
+    }
+    20%{
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* рух хвиль */
+@-webkit-keyframes waves {
+    0% { 
+        -webkit-transform: translate(0px,0px); 
+                transform: translate(0px,0px);
+    }
+    50% { 
+        -webkit-transform: translate(-25px,5px); 
+                transform: translate(-25px,5px);
+    }
+    100% { 
+        -webkit-transform: translate(0px,0px); 
+                transform: translate(0px,0px);
+    }
+  }
+@keyframes waves {
+    0% { 
+        -webkit-transform: translate(0px,0px); 
+                transform: translate(0px,0px);
+    }
+    50% { 
+        -webkit-transform: translate(-25px,5px); 
+                transform: translate(-25px,5px);
+    }
+    100% { 
+        -webkit-transform: translate(0px,0px); 
+                transform: translate(0px,0px);
+    }
+  }
+/* рух айсберга */
+@-webkit-keyframes icebergWave {
+    0%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    25%{
+        -webkit-transform: matrix(1.00, 0.09, -0.09, 1.00, -10, -5);
+                transform: matrix(1.00, 0.09, -0.09, 1.00, -10, -5);
+    }
+    50%{
+        -webkit-transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0);
+                transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0); /*-8deg*/
+    }
+    75%{
+        -webkit-transform:matrix(0.97, -0.26, 0.26, 0.97, 10, -8);
+                transform:matrix(0.97, -0.26, 0.26, 0.97, 10, -8); /*-15deg*/
+    }
+    100%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+@keyframes icebergWave {
+    0%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    25%{
+        -webkit-transform: matrix(1.00, 0.09, -0.09, 1.00, -10, -5);
+                transform: matrix(1.00, 0.09, -0.09, 1.00, -10, -5);
+    }
+    50%{
+        -webkit-transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0);
+                transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0); /*-8deg*/
+    }
+    75%{
+        -webkit-transform:matrix(0.97, -0.26, 0.26, 0.97, 10, -8);
+                transform:matrix(0.97, -0.26, 0.26, 0.97, 10, -8); /*-15deg*/
+    }
+    100%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+/* Бульбашка 1, з човна в гору, зміна їхньої форми*/
+@-webkit-keyframes bubble_1{
+    0%{
+        opacity: 1;
+        -webkit-transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    20%{
+        -webkit-transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -8);
+                transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -8);
+    }
+    25%{
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 75, -20);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 75, -20);
+    }
+    95%{
+        opacity: 1;
+        /* translateY(470) for animation: submarine with 30s speed */
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+    }
+    96%{
+        opacity: 0;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340); 
+    }
+    98%{
+        opacity: 0;
+        -webkit-transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+@keyframes bubble_1{
+    0%{
+        opacity: 1;
+        -webkit-transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    20%{
+        -webkit-transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -8);
+                transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -8);
+    }
+    25%{
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 75, -20);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 75, -20);
+    }
+    95%{
+        opacity: 1;
+        /* translateY(470) for animation: submarine with 30s speed */
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+    }
+    96%{
+        opacity: 0;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 470, -340); 
+    }
+    98%{
+        opacity: 0;
+        -webkit-transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(1.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+
+/* субмарина, рух по чинається зправа-вліво і навпаки */
+@-webkit-keyframes submarine{
+    0%{
+        /* z-index: 3; */
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0); 
+    }
+    48%{
+        /* z-index: 3; */
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1870, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1870, 0);
+    }
+    50%{
+        /* z-index: 1; */
+        /* transform: matrix(-1.00,0.00,0.00,1.00,-1870,-50);  */
+        -webkit-transform: matrix(-1, 0.00, 0.00, 1.00, -1870, 0);
+                transform: matrix(-1, 0.00, 0.00, 1.00, -1870, 0);
+    }
+    51%{
+        /* z-index: 1; */
+        /* transform: matrix(-0.75,0.00,0.00,0.75,-1600,-50); */
+        -webkit-transform: matrix(-1, 0.00, 0.00, 1, -1600, 0);
+                transform: matrix(-1, 0.00, 0.00, 1, -1600, 0);
+    }
+    100%{
+        /* z-index: 1; */
+        /* transform: matrix(-0.75,0.00,0.00,0.75,500,-50); */
+        -webkit-transform: matrix(-1,0.00,0.00,1,500,0);
+                transform: matrix(-1,0.00,0.00,1,500,0);
+    }
+}
+@keyframes submarine{
+    0%{
+        /* z-index: 3; */
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0); 
+    }
+    48%{
+        /* z-index: 3; */
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1870, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1870, 0);
+    }
+    50%{
+        /* z-index: 1; */
+        /* transform: matrix(-1.00,0.00,0.00,1.00,-1870,-50);  */
+        -webkit-transform: matrix(-1, 0.00, 0.00, 1.00, -1870, 0);
+                transform: matrix(-1, 0.00, 0.00, 1.00, -1870, 0);
+    }
+    51%{
+        /* z-index: 1; */
+        /* transform: matrix(-0.75,0.00,0.00,0.75,-1600,-50); */
+        -webkit-transform: matrix(-1, 0.00, 0.00, 1, -1600, 0);
+                transform: matrix(-1, 0.00, 0.00, 1, -1600, 0);
+    }
+    100%{
+        /* z-index: 1; */
+        /* transform: matrix(-0.75,0.00,0.00,0.75,500,-50); */
+        -webkit-transform: matrix(-1,0.00,0.00,1,500,0);
+                transform: matrix(-1,0.00,0.00,1,500,0);
+    }
+}
+/* коливання ходу торпед */
+@-webkit-keyframes torpWay{
+    0%{
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0, -15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0, -15);
+    } 
+    50% {
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0, 15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0, 15);
+    }
+    100% {
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0,-15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0,-15); 
+    }
+}
+@keyframes torpWay{
+    0%{
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0, -15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0, -15);
+    } 
+    50% {
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0, 15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0, 15);
+    }
+    100% {
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 0,-15);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 0,-15); 
+    }
+}
+/* АКТИВНА ФАЗА */
+/* субмарина */
+@-webkit-keyframes submarineAction{
+    50%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, 0);
+    }
+    100%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, -290);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, -290);
+    }
+}
+@keyframes submarineAction{
+    50%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, 0);
+    }
+    100%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, -290);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -1024, -290);
+    }
+}
+@-webkit-keyframes icebergCrashLeft{
+    100%{
+        -webkit-transform: matrix(1.00,0.00,0.00,1.00,-20,20);
+                transform: matrix(1.00,0.00,0.00,1.00,-20,20);
+    }
+}
+@keyframes icebergCrashLeft{
+    100%{
+        -webkit-transform: matrix(1.00,0.00,0.00,1.00,-20,20);
+                transform: matrix(1.00,0.00,0.00,1.00,-20,20);
+    }
+}
+@-webkit-keyframes icebergCrashRight{
+    100%{
+        -webkit-transform: matrix(1.00,0.00,0.00,1.00,50,20);
+                transform: matrix(1.00,0.00,0.00,1.00,50,20);
+    }
+}
+@keyframes icebergCrashRight{
+    100%{
+        -webkit-transform: matrix(1.00,0.00,0.00,1.00,50,20);
+                transform: matrix(1.00,0.00,0.00,1.00,50,20);
+    }
+}
+@-webkit-keyframes exitCat{
+    30%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 70, -18);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 70, -18);
+    }
+    100%{
+        -webkit-transform: matrix(0.77,0.64,-0.64,0.77, 70, -90);
+                transform: matrix(0.77,0.64,-0.64,0.77, 70, -90)
+    }
+}
+@keyframes exitCat{
+    30%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 70, -18);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 70, -18);
+    }
+    100%{
+        -webkit-transform: matrix(0.77,0.64,-0.64,0.77, 70, -90);
+                transform: matrix(0.77,0.64,-0.64,0.77, 70, -90)
+    }
+}
+
+@-webkit-keyframes windowVisible{
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes windowVisible{
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes santaToSubmorine{
+    25%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -50, -15);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -50, -15); 
+    }
+    50%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -102, -30);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -102, -30); 
+    }
+    75%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -155, -15);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -155, -15); 
+    }
+    100%{
+        -webkit-transform: matrix(0.99, 0.14, -0.14, 0.99, -210, 0);
+                transform: matrix(0.99, 0.14, -0.14, 0.99, -210, 0);
+    }
+}
+@keyframes santaToSubmorine{
+    25%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -50, -15);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -50, -15); 
+    }
+    50%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -102, -30);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -102, -30); 
+    }
+    75%{
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, -155, -15);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, -155, -15); 
+    }
+    100%{
+        -webkit-transform: matrix(0.99, 0.14, -0.14, 0.99, -210, 0);
+                transform: matrix(0.99, 0.14, -0.14, 0.99, -210, 0);
+    }
+}
+@-webkit-keyframes deerToSubmorine{
+    70%{
+        -webkit-transform: matrix(0.98 ,0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98 ,0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    75%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    80%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    85%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    90%{
+        -webkit-transform: matrix(0.98 0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98 0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    95%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    100%{
+        -webkit-transform: matrix(0.98, 0.17 ,-0.17, 0.98, -235, -140);
+                transform: matrix(0.98, 0.17 ,-0.17, 0.98, -235, -140); /*10deg*/
+    }
+}
+@keyframes deerToSubmorine{
+    70%{
+        -webkit-transform: matrix(0.98 ,0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98 ,0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    75%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    80%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    85%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    90%{
+        -webkit-transform: matrix(0.98 0.17, -0.17, 0.98, -235, -140);
+                transform: matrix(0.98 0.17, -0.17, 0.98, -235, -140); /*10deg*/
+    }
+    95%{
+        -webkit-transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150);
+                transform: matrix(0.98, 0.17, -0.17, 0.98, -235, -150); /*10deg*/
+    }
+    100%{
+        -webkit-transform: matrix(0.98, 0.17 ,-0.17, 0.98, -235, -140);
+                transform: matrix(0.98, 0.17 ,-0.17, 0.98, -235, -140); /*10deg*/
+    }
+}
+
+@-webkit-keyframes bubbleStop{
+    0%{
+        opacity: 1;
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    50%{
+        -webkit-transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -15);
+                transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -15);
+    }
+    95%{
+        opacity: 1;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+    }
+    96%{
+        opacity: 0;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40); 
+    }
+    98%{
+        opacity: 0;
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+
+@keyframes bubbleStop{
+    0%{
+        opacity: 1;
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+    50%{
+        -webkit-transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -15);
+                transform:matrix(1.50, 0.00, 0.00, 1.00, 50, -15);
+    }
+    95%{
+        opacity: 1;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+    }
+    96%{
+        opacity: 0;
+        -webkit-transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40);
+                transform:matrix(1.00, 0.00, 0.00, 1.00, 100, -40); 
+    }
+    98%{
+        opacity: 0;
+        -webkit-transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+                transform: matrix(01.00, 0.00, 0.00, 1.00, 0, 0);
+    }
+}
+
+@-webkit-keyframes mineAction{
+    99%{
+        opacity: 1;
+        -webkit-transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+                transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+                transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+    }
+}
+
+@keyframes mineAction{
+    99%{
+        opacity: 1;
+        -webkit-transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+                transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+                transform:matrix(1, 0.00, 0.00, 1.00, 320, -200);
+    }
+}
+@-webkit-keyframes torpAction{
+    99%{
+        opacity: 1;
+        -webkit-transform:matrix(0.71, 0.71, -0.71 0.7, -100, -180);
+                transform:matrix(0.71, 0.71, -0.71 0.7, -100, -180);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform:matrix(0.71, 0.71, -0.71, 0.7, -100, -180);
+                transform:matrix(0.71, 0.71, -0.71, 0.7, -100, -180);
+    }
+}
+@keyframes torpAction{
+    99%{
+        opacity: 1;
+        -webkit-transform:matrix(0.71, 0.71, -0.71 0.7, -100, -180);
+                transform:matrix(0.71, 0.71, -0.71 0.7, -100, -180);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform:matrix(0.71, 0.71, -0.71, 0.7, -100, -180);
+                transform:matrix(0.71, 0.71, -0.71, 0.7, -100, -180);
+    }
+}
+@-webkit-keyframes boomAction{
+    70%{
+        opacity: 1;
+        -webkit-transform: scale(4.5);
+                transform: scale(4.5);
+    }
+    85%{
+        opacity: 1;
+        -webkit-transform: scale(3.9);
+                transform: scale(3.9);
+    }
+    98%{
+        opacity: 1;
+        -webkit-transform: scale(4.5);
+                transform: scale(4.5);
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes boomAction{
+    70%{
+        opacity: 1;
+        -webkit-transform: scale(4.5);
+                transform: scale(4.5);
+    }
+    85%{
+        opacity: 1;
+        -webkit-transform: scale(3.9);
+                transform: scale(3.9);
+    }
+    98%{
+        opacity: 1;
+        -webkit-transform: scale(4.5);
+                transform: scale(4.5);
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@-webkit-keyframes popupAction{
+    70%{
+        opacity: 0.8;
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+    85%{
+        opacity: 0.8;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    98%{
+        opacity: 0.8;
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+    100%{
+        opacity: 0.8;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@keyframes popupAction{
+    70%{
+        opacity: 0.8;
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+    85%{
+        opacity: 0.8;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    98%{
+        opacity: 0.8;
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+    100%{
+        opacity: 0.8;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@-webkit-keyframes fireworks{
+    20%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    100%{
+        
+        -webkit-transform: scale(1);
+        
+                transform: scale(1);
+    }
+}
+@keyframes fireworks{
+    20%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    100%{
+        
+        -webkit-transform: scale(1);
+        
+                transform: scale(1);
+    }
+}
+/* _______________________________________________________________ */
+/* руки санта клауса */
+@-webkit-keyframes hands-r{
+    50%{
+        -webkit-transform: rotate(25deg);
+                transform: rotate(25deg);
+    }
+}
+@keyframes hands-r{
+    50%{
+        -webkit-transform: rotate(25deg);
+                transform: rotate(25deg);
+    }
+}
+/* @keyframes hands-l{
+    50%{
+        transform: rotate(-25deg);
+    }
+} */
+
+
+
+  
