@@ -59,7 +59,7 @@ img{
     text-align: center;
     margin: 0;
 }
-#pop-up p{
+#pop-up p, #help-up p{
     font-family: sans-serif;
     color: #152978;
     font-size: 16px;
@@ -79,6 +79,9 @@ img{
 #help-up h2{
     color: #fff200;
     opacity: 1;
+}
+#help-up p{
+    color: tomato;
 }
 #help-up.helpup-action{
     -webkit-animation: boomAction 2.2s ease-in forwards;
@@ -232,16 +235,20 @@ img{
     left: 1024px;
     width: 441px;
     height: 282px;
+    --actionElemsSpeed: 22s;
     --count: 1;
-    will-change: matrix;
-    -webkit-animation: submarine 30s linear;
-            animation: submarine 30s linear;
+    will-change: transform;
+    -webkit-animation: submarine var(--actionElemsSpeed) linear;
+            animation: submarine var(--actionElemsSpeed) linear;
+    /* -webkit-animation: submarine 30s linear;
+            animation: submarine 30s linear; */
     -webkit-animation-iteration-count: var(--count);
             animation-iteration-count: var(--count);
     -webkit-animation-play-state: running;
             animation-play-state: running;
 }
 .action-elems.submarine-action{
+    will-change: transform;
     -webkit-animation: submarineAction 15s ease-out 1s forwards;
             animation: submarineAction 15s ease-out 1s forwards;
     
@@ -253,56 +260,56 @@ img{
     bottom: 45px;
     width: 15px;
     height: 15px;
-    -webkit-animation: bubble_1 4s linear infinite;
-            animation: bubble_1 4s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite; /*4s*/
 }
 .bubble-2{
     right: 10px;
     bottom: 48px;
     width: 15px;
     height: 15px;
-    -webkit-animation: bubble_1 3.8s linear infinite;
-            animation: bubble_1 3.8s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.9) linear infinite; 
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.9) linear infinite; /*3.8s*/
 }
 .bubble-3{
     right: 20px;
     bottom: 50px;
     width: 20px;
     height: 20px;
-    -webkit-animation: bubble_1 3.9s linear infinite;
-            animation: bubble_1 3.9s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.7) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.7) linear infinite; /*3.9s*/
 }
 .bubble-4{
     right: 30px;
     bottom: 60px;
     width: 24px;
     height: 24px;
-    -webkit-animation: bubble_1 4.2s linear infinite;
-            animation: bubble_1 4.2s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.1) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.1) linear infinite; /*4.2s*/
 }
 .bubble-5{
     right: 40px;
     bottom: 60px;
     width: 18px;
     height: 18px;
-    -webkit-animation: bubble_1 4.1s linear infinite;
-            animation: bubble_1 4.1s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.3) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.3) linear infinite; /*4.1s*/
 }
 .bubble-6{
     right: 50px;
     bottom: 34px;
     width: 13px;
     height: 13px;
-    -webkit-animation: bubble_1 4s linear infinite;
-            animation: bubble_1 4s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite;
 }
 .bubble-7{
     right: 60px;
     bottom: 40px;
     width: 18px;
     height: 18px;
-    -webkit-animation: bubble_1 4s linear infinite;
-            animation: bubble_1 4s linear infinite;
+    -webkit-animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite;
+            animation: bubble_1 calc(var(--actionElemsSpeed) / 7.5) linear infinite;
 }
 .bubble.bubble-stop{
     -webkit-animation: bubbleStop 1.8s linear 1s infinite;

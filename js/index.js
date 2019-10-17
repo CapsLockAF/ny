@@ -62,6 +62,7 @@ window.addEventListener('DOMContentLoaded', function(){
     actionElems.addEventListener("animationend", addAnimCount);
     // клік
     mainBlock.addEventListener("click", function() {
+        // actionElems.style.setProperty("--actionElemsSpeed", "24s");
         helpUp.classList.add("helpup-action");
         actionElems.style.setProperty("--count", counter);
         actionElems.removeEventListener("animationend", addAnimCount);
